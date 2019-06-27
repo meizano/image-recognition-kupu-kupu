@@ -1,0 +1,43 @@
+<html>
+
+<head>
+	<!-- Load the latest version of TensorFlow.js -->
+	<script src="https://unpkg.com/@tensorflow/tfjs"></script>
+	<script src="https://unpkg.com/@tensorflow-models/mobilenet"></script>
+</head>
+
+<body>
+	<div id="console"></div>
+	<!-- Add an image that we will use to test -->
+	<img id="img" crossOrigin
+		src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/41/Common_Birdwing_%28_%E0%A6%B8%E0%A7%8B%E0%A6%A8%E0%A6%BE%E0%A6%B2%2901.JPG/220px-Common_Birdwing_%28_%E0%A6%B8%E0%A7%8B%E0%A6%A8%E0%A6%BE%E0%A6%B2%2901.JPG"
+		width=227 height=227 />
+
+	<!-- Load index.js after the content of the page -->
+	<script>
+		let net;
+		consl = document.querySelector("#console");
+
+		async function app() {
+			console.log('Loading mobilenet..');
+
+			// Load the model.
+			net = await mobilenet.load();
+			console.log('Sucessfully loaded model');
+
+			// Make a prediction through the model on our image.
+			const imgEl = document.getElementById('img');
+			const result = await net.classify(imgEl);
+			console.log(result);
+
+			consl.innerText += "Nama: " + result[0].className;
+			consl.innerText += ", Probabilitas:" + result[0].probability;
+			consl.innerText += " | ";
+
+		}
+
+		app();
+	</script>
+</body>
+
+</html>
