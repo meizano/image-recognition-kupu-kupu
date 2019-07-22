@@ -1091,7 +1091,7 @@
             '0.25': 'https://tfhub.dev/google/imagenet/mobilenet_v1_025_224/classification/1',
             '0.50': 'https://tfhub.dev/google/imagenet/mobilenet_v1_050_224/classification/1',
             '0.75': 'https://tfhub.dev/google/imagenet/mobilenet_v1_075_224/classification/1',
-            '1.00': 'model100.json'
+            '1.00': 'model100'
         },
         '2.00': {
             '0.50': 'https://tfhub.dev/google/imagenet/mobilenet_v2_050_224/classification/2',
