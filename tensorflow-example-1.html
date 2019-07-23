@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Tensorflow.js example 1</title>
+    <meta name="description" content="Tensorflow.js example 1">
+    <meta name="author" content="Meizano">
+    <!-- Load the latest version of TensorFlow.js -->
+    <!-- <script src="https://unpkg.com/@tensorflow/tfjs"></script> -->
+    <!-- <script src="https://unpkg.com/@tensorflow-models/mobilenet"></script> -->
+    <script src="js/tfjs/tf.min.js"></script>
+    <script src="js/mobilenet/mobilenet.js"></script>
+</head>
+
+<body>
+    <div id="console"></div>
+
+    <!-- Select an image that we will use to test -->
+    <img id="uploadPreview" />
+    <input id="uploadImage" type="file" name="myPhoto" onchange="previewImage();" />
+    <input id="predictImage" type="button" name="predictButton" value="Predict" onclick="predictImage();" />
+
+
+    <!-- Load index.js after the content of the page -->
+    <script>
+        // Disable WEBGL-PACK to circumvent "Failed to link vertex and fragment" shaders error
+        tf.ENV.set('WEBGL_PACK', false);
+
+        let net;
+        let consl = document.querySelector("#console");
+        let image = document.getElementById('uploadPreview');
+
+        // <!-- Preview image script -->
+        // <!-- reference: https://stackoverflow.com/questions/18457340/how-to-preview-selected-image-in-input-type-file-in-popup-using-jquery -->
+        function previewImage() {
+            var file = document.getElementById("uploadImage").files[0];
+            var oFReader = new FileReader();
+            oFReader.onloadend = function(oFREvent) {
+                image.src = oFREvent.target.result;
+            };
+            if (file) {
+                oFReader.readAsDataURL(file);
+            }
+
+        };
+
+        async function app() {
+            let loadingText = "Loading mobilnet..";
+            console.log(loadingText);
+            consl.innerText = loadingText;
+
+            // Load the model.
+            net = await mobilenet.load();
+            let loadingSuccessText = 'Sucessfully loaded model';
+            console.log(loadingSuccessText);
+            consl.innerText = loadingSuccessText;
+        }
+
+        app();
+
+        // Function to make a prediction through the model on our image.
+        async function predictImage() {
+            const result = await net.classify(image);
+            console.log(result);
+
+            consl.innerText = "Nama: " + result[0].className;
+            consl.innerText += ", Probabilitas:" + result[0].probability;
+            consl.innerText += " | ";
+        }
+    </script>
+</body>
+
+</html>

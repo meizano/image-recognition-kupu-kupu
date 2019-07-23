@@ -2,47 +2,54 @@
 <html lang="en">
 
 <head>
-	<meta charset="utf-8">
-	<title>Tensorflow.js example 2</title>
-	<meta name="description" content="Tensorflow.js example 2">
-	<meta name="author" content="Meizano">
-	<!-- Load the latest version of TensorFlow.js -->
-	<!-- <script src="https://unpkg.com/@tensorflow/tfjs"></script> -->
-	<!-- <script src="https://unpkg.com/@tensorflow-models/mobilenet"></script> -->
-	<script src="js/tfjs/tf.min.js"></script>
-	<script src="js/mobilenet/mobilenet.js"></script>
+    <meta charset="utf-8">
+    <title>Tensorflow.js example 2</title>
+    <meta name="description" content="Tensorflow.js example 2">
+    <meta name="author" content="Meizano">
+    <!-- Load the latest version of TensorFlow.js -->
+    <!-- <script src="https://unpkg.com/@tensorflow/tfjs"></script> -->
+    <!-- <script src="https://unpkg.com/@tensorflow-models/mobilenet"></script> -->
+    <script src="js/tfjs/tf.min.js"></script>
+    <script src="js/mobilenet/mobilenet.js"></script>
 </head>
 
 <body>
-	<div id="console"></div>
-	<!-- Add an image that we will use to test -->
-	<img id="img" crossOrigin src="image/Common_Birdwing-01-220px.JPG" width=227 height=227 />
+    <div id="console"></div>
+    <!-- Add an image that we will use to test -->
+    <img id="img" crossOrigin src="image/Common_Birdwing-01-220px.JPG" />
 
-	<!-- Load index.js after the content of the page -->
-	<script>
-		let net;
-		consl = document.querySelector("#console");
+    <!-- Load index.js after the content of the page -->
+    <script>
+        // Disable WEBGL-PACK to circumvent "Failed to link vertex and fragment" shaders error
+        tf.ENV.set('WEBGL_PACK', false);
 
-		async function app() {
-			console.log('Loading mobilenet..');
+        let net;
+        consl = document.querySelector("#console");
 
-			// Load the model.
-			net = await mobilenet.load();
-			console.log('Sucessfully loaded model');
+        async function app() {
+            let loadingText = "Loading mobilnet..";
+            console.log(loadingText);
+            consl.innerText = loadingText;
 
-			// Make a prediction through the model on our image.
-			const imgEl = document.getElementById('img');
-			const result = await net.classify(imgEl);
-			console.log(result);
+            // Load the model.
+            net = await mobilenet.load();
+            let loadingSuccessText = 'Sucessfully loaded model';
+            console.log(loadingSuccessText);
+            consl.innerText = loadingSuccessText;
 
-			consl.innerText += "Nama: " + result[0].className;
-			consl.innerText += ", Probabilitas:" + result[0].probability;
-			consl.innerText += " | ";
+            // Make a prediction through the model on our image.
+            const imgEl = document.getElementById('img');
+            const result = await net.classify(imgEl);
+            console.log(result);
 
-		}
+            consl.innerText = "Nama: " + result[0].className;
+            consl.innerText += ", Probabilitas:" + result[0].probability;
+            consl.innerText += " | ";
 
-		app();
-	</script>
+        }
+
+        app();
+    </script>
 </body>
 
 </html>

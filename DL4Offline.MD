@@ -30,3 +30,4 @@ This is a workaround try to make all the file available offline.
 
 Maybe related topic:
 * [Image Classification with client-side neural network using TensorFlow.js](https://medium.com/agara-labs/image-classification-with-the-client-side-neural-network-using-tensorflow-js-8f94d3dc7c5c)
+* [Image Recognition/Labeling using TensorFlow.js](https://stackoverflow.com/questions/54867308/image-recognition-labeling-using-tensorflow-js)
