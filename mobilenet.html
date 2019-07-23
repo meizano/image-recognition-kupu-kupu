@@ -8,9 +8,12 @@
   <meta name="author" content="Meizano">
 
   <!-- Load TensorFlow.js. This is required to use MobileNet. -->
-  <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@1.0.1"> </script>
+  <!-- <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@1.0.1"> </script> -->
+  <script src="js/tfjs/tf.min.js"></script>
+	
   <!-- Load the MobileNet model. -->
-  <script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/mobilenet@1.0.0"> </script>
+  <!-- <script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/mobilenet@1.0.0"> </script> -->
+  <script src="js/mobilenet/mobilenet.js"></script>
 </head>
 
 <body>
@@ -21,11 +24,20 @@
   <script>
     // Notice there is no 'import' statement. 'mobilenet' and 'tf' is
     // available on the index-page because of the script tag above.
+    
+    // Disable WEBGL-PACK to circumvent "Failed to link vertex and fragment" shaders error
+    tf.ENV.set('WEBGL_PACK', false);
 
     const img = document.getElementById('img');
 
     // Load the model.
-    mobilenet.load().then(model => {
+    // reference: https://github.com/tensorflow/tfjs-models/tree/master/mobilenet
+    mobilenet.load(
+      {
+        version: 1,
+        alpha: .50 | .75 | 1.0
+      }
+    ).then(model => {
       // Classify the image.
       model.classify(img).then(predictions => {
         console.log('Predictions: ');

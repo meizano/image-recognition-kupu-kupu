@@ -7,7 +7,6 @@
   <meta name="description" content="Tensorflow.js example 4">
   <meta name="author" content="Meizano">
   <!-- Load the latest version of TensorFlow.js -->
-  <!-- <script src="js/tf.min.js"></script> -->
   <script src="js/tfjs/tf.min.js"></script>
   <script src="js/mobilenet/mobilenet.js"></script>
   <script src="js/knn-classifier/knn-classifier.min.js"></script>
@@ -58,25 +57,13 @@
 
       await setupWebcam();
 
-      // Reads an image from the webcam and associates it with a specific class
-      // index.
-      const addExample = classId => {
-        console.log("add example..");
-        // Get the intermediate activation of MobileNet 'conv_preds' and pass that
-        // to the KNN classifier.
-        const activation = net.infer(webcamElement, 'conv_preds');
+      // Get the intermediate activation of MobileNet 'conv_preds' and pass that
+      // to the KNN classifier.
+      const activation = net.infer(imgEl, 'conv_preds');
 
-        // Pass the intermediate activation to the classifier.
-        classifier.addExample(activation, classId);
-      };
-
-      // When clicking a button, add an example for that class.
-      // document.getElementById('Troides-helena').addEventListener('click', () => addExample(0));
-      // document.getElementById('Graphium-agamemnon').addEventListener('click', () => addExample(1));
-      // document.getElementById('Papilio-peranthus').addEventListener('click', () => addExample(2));
-
-      imgEl.addExample(0);
-
+      // Pass the intermediate activation to the classifier.
+      classifier.addExample(activation, 0);
+      
 
       while (true) {
         if (classifier.getNumClasses() > 0) {
