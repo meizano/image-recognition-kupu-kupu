@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>Tensorflow.js example 5</title>
+    <title>Tensorflow.js example 6</title>
     <meta name="description" content="Tensorflow.js example 1">
     <meta name="author" content="Meizano">
     <!-- Load the latest version of TensorFlow.js -->
@@ -11,6 +11,7 @@
     <!-- <script src="https://unpkg.com/@tensorflow-models/mobilenet"></script> -->
     <script src="js/tfjs/tf.min.js"></script>
     <script src="js/mobilenet/mobilenet.js"></script>
+    <script src="js/knn-classifier/knn-classifier.min.js"></script>
 </head>
 
 <body>
@@ -18,8 +19,15 @@
 
     <!-- Select an image that we will use to test -->
     <img id="uploadPreview" />
+    <br/>
     <input id="uploadImage" type="file" name="myPhoto" onchange="onChangePredictImage();" />
     <input id="predictImage" type="button" name="predictButton" value="Predict" onclick="predictImage();" />
+
+    <!-- button to train data -->
+    <br/>
+    <button id="Troides-helena">Add Troides helena</button>
+    <button id="Graphium-agamemnon">Add Graphium agamemnon</button>
+    <button id="Papilio-peranthus">Add Papilio peranthus</button>
 
 
     <!-- Load index.js after the content of the page -->
@@ -30,13 +38,15 @@
         let net;
         let consl = document.querySelector("#console");
         let image = document.getElementById('uploadPreview');
+        const classifier = knnClassifier.create();
 
         // <!-- Preview image script -->
         // <!-- reference: https://stackoverflow.com/questions/18457340/how-to-preview-selected-image-in-input-type-file-in-popup-using-jquery -->
         function previewImage() {
-            var file = document.getElementById("uploadImage").files[0];
-            var oFReader = new FileReader();
-            oFReader.onloadend = function(oFREvent) {
+            let file = document.getElementById("uploadImage").files[0];
+
+            let oFReader = new FileReader();
+            oFReader.onloadend = function (oFREvent) {
                 image.src = oFREvent.target.result;
             };
             if (file) {
@@ -59,19 +69,42 @@
 
         app();
 
+        // Reads an image from the webcam and associates it with a specific class
+        // index.
+        const addExample = classId => {
+            console.log("add example..");
+            // Get the intermediate activation of MobileNet 'conv_preds' and pass that
+            // to the KNN classifier.
+            const activation = net.infer(image, 'conv_preds');
+
+            // Pass the intermediate activation to the classifier.
+            classifier.addExample(activation, classId);
+        };
+
+        // When clicking a button, add an example for that class.
+        document.getElementById('Troides-helena').addEventListener('click', () => addExample(0));
+        document.getElementById('Graphium-agamemnon').addEventListener('click', () => addExample(1));
+        document.getElementById('Papilio-peranthus').addEventListener('click', () => addExample(2));
+
+
         // Function to make a prediction through the model on our image.
         async function predictImage() {
-            const result = await net.classify(image);
+            // Get the activation from mobilenet from image.
+            const activation = net.infer(image, 'conv_preds');
+            // Get the most likely class and confidences from the classifier module.
+            const result = await classifier.predictClass(activation);
             console.log(result);
 
-            consl.innerText = "";
-            consl.innerText = "Nama: " + result[0].className;
-            consl.innerText += ", Probabilitas:" + result[0].probability;
-            consl.innerText += " | ";
+            const classes = ['Troides helena', 'Graphium agamemnon', 'Papilio peranthus'];
+            consl.innerText = `
+                prediction: ${classes[result.classIndex]}\n
+                probability: ${result.confidences[result.classIndex]}
+            `;
+
         }
 
         function onChangePredictImage() {
-            var prom = new Promise(function(resolve, reject) {
+            let prom = new Promise(function (resolve, reject) {
                 previewImage();
                 consl.innerText = "";
             });
