@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <title>Tensorflow.js example 7</title>
-    <meta name="description" content="Tensorflow.js example 1">
+    <meta name="description" content="Tensorflow.js example 7">
     <meta name="author" content="Meizano">
     <style>
         img {
@@ -130,10 +130,10 @@
         };
 
         // When clicking a button, add an example for that class.
-        document.getElementById('biji-bolong').addEventListener('click', () => addExample(0));
-        document.getElementById('biji-hitam').addEventListener('click', () => addExample(1));
-        document.getElementById('biji-normal').addEventListener('click', () => addExample(2));
-        document.getElementById('biji-pecah').addEventListener('click', () => addExample(3));
+        document.getElementById('biji-bolong').addEventListener('click', () => addExample('Biji bolong'));
+        document.getElementById('biji-hitam').addEventListener('click', () => addExample('Biji hitam'));
+        document.getElementById('biji-normal').addEventListener('click', () => addExample('Biji normal'));
+        document.getElementById('biji-pecah').addEventListener('click', () => addExample('Biji pecah'));
 
 
         // Function to make a prediction through the model on our image.
@@ -146,7 +146,7 @@
 
             const classes = ['Biji bolong', 'Biji hitam', 'Biji normal', 'Biji pecah'];
             consl.innerText = `
-                prediction: ${classes[result.classIndex]}\n
+            prediction: ${result.label}\n
                 probability: ${result.confidences[result.classIndex]}
             `;
 
