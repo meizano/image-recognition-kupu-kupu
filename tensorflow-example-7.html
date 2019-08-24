@@ -1,0 +1,176 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Tensorflow.js example 7</title>
+    <meta name="description" content="Tensorflow.js example 1">
+    <meta name="author" content="Meizano">
+    <style>
+        img {
+            width: 20rem;
+        }
+    </style>
+    <!-- Load the latest version of TensorFlow.js -->
+    <!-- <script src="https://unpkg.com/@tensorflow/tfjs"></script> -->
+    <!-- <script src="https://unpkg.com/@tensorflow-models/mobilenet"></script> -->
+    <script src="js/tfjs/tf.min.js"></script>
+    <script src="js/mobilenet/mobilenet.js"></script>
+    <script src="js/knn-classifier/knn-classifier.min.js"></script>
+</head>
+
+<body>
+    <div id="console"></div>
+
+    <!-- Select an image that we will use to test -->
+    <img id="uploadPreview" />
+    <div id="imgUploadPreview"></div>
+    <br/>
+    <label for="myTest">Test file</label><input id="uploadImage" type="file" name="myTest" onchange="onChangePredictImage();" /> <button id="clear-image-preview">Clear image preview</button><br/>
+    <label for="myPhoto">Train file(s)</label><input id="uploadTrainImage" type="file" name="myPhoto" multiple onchange="onChangeDisplayImage();" /> <button id="clear-imagetrain-preview">Clear train image preview</button><br/>
+    <input id="predictImage" type="button" name="predictButton" value="Predict" onclick="predictImage();" />
+
+    <!-- button to train data -->
+    <br/>
+    <button id="biji-bolong">Latih biji bolong</button>
+    <button id="biji-hitam">Latih biji hitam</button>
+    <button id="biji-normal">Latih biji normal</button>
+    <button id="biji-pecah">Latih biji pecah</button>
+    <br>
+
+
+
+    <!-- Load index.js after the content of the page -->
+    <script>
+        // Disable WEBGL-PACK to circumvent "Failed to link vertex and fragment" shaders error
+        tf.ENV.set('WEBGL_PACK', false);
+
+        let net;
+        let consl = document.querySelector("#console");
+        let image = document.getElementById('uploadPreview');
+        let imgUploadPreview = document.getElementById('imgUploadPreview');
+        const classifier = knnClassifier.create();
+
+        // Clear div for image preview
+        document.getElementById('clear-image-preview').addEventListener('click', () => clearImagePreview(uploadPreview));
+        document.getElementById('clear-imagetrain-preview').addEventListener('click', () => clearImagePreview(imgUploadPreview));
+
+        function clearImagePreview(imagediv) {
+            imagediv.innerHTML = "";
+        }
+
+        // <!-- Preview image script -->
+        // <!-- reference: https://stackoverflow.com/questions/18457340/how-to-preview-selected-image-in-input-type-file-in-popup-using-jquery -->
+        function previewImage(imgfile, imagepreview) {
+
+            let oFReader = new FileReader();
+            oFReader.onloadend = function(oFREvent) {
+                imagepreview.src = oFREvent.target.result;
+            };
+            if (imgfile) {
+                oFReader.readAsDataURL(imgfile);
+            }
+
+        };
+
+        function previewTrainImage(imgfile, imagepreview) {
+
+            let oFReader = new FileReader();
+            oFReader.onloadend = function(oFREvent) {
+                let imgv = document.createElement('img');
+                imgv.setAttribute("class", "traindata");
+                imagepreview.appendChild(imgv);
+
+                imgv.src = oFREvent.target.result;
+            };
+            if (imgfile) {
+                oFReader.readAsDataURL(imgfile);
+            }
+
+        };
+
+        function imageFiles(imgfiles, imgfilepreview) {
+            imgfilepreview.innerHTML = "";
+            for (let i = 0; i < imgfiles.length; i++) {
+                console.log(i);
+                previewTrainImage(imgfiles[i], imgfilepreview);
+            }
+
+        };
+
+        async function app(messagediv) {
+            let loadingText = "Loading mobilnet..";
+            console.log(loadingText);
+            messagediv.innerText = loadingText;
+
+            // Load the model.
+            net = await mobilenet.load();
+            let loadingSuccessText = 'Sucessfully loaded model';
+            console.log(loadingSuccessText);
+            messagediv.innerText = loadingSuccessText;
+        }
+
+        app(consl);
+
+        // Reads an image from the webcam/image and associates it with a specific class
+        // index.
+        const addExample = classId => {
+            console.log("add example..");
+            let imgtraindata = document.querySelectorAll(".traindata");
+            for (let i = 0; i < imgtraindata.length; i++) {
+                console.log(i);
+                // Get the intermediate activation of MobileNet 'conv_preds' and pass that
+                // to the KNN classifier.
+                const activation = net.infer(imgtraindata[i], 'conv_preds');
+
+                // Pass the intermediate activation to the classifier.
+                classifier.addExample(activation, classId);
+            }
+
+        };
+
+        // When clicking a button, add an example for that class.
+        document.getElementById('biji-bolong').addEventListener('click', () => addExample(0));
+        document.getElementById('biji-hitam').addEventListener('click', () => addExample(1));
+        document.getElementById('biji-normal').addEventListener('click', () => addExample(2));
+        document.getElementById('biji-pecah').addEventListener('click', () => addExample(3));
+
+
+        // Function to make a prediction through the model on our image.
+        async function predictImage() {
+            // Get the activation from mobilenet from image.
+            const activation = net.infer(image, 'conv_preds');
+            // Get the most likely class and confidences from the classifier module.
+            const result = await classifier.predictClass(activation);
+            console.log(result);
+
+            const classes = ['Biji bolong', 'Biji hitam', 'Biji normal', 'Biji pecah'];
+            consl.innerText = `
+                prediction: ${classes[result.classIndex]}\n
+                probability: ${result.confidences[result.classIndex]}
+            `;
+
+        }
+
+        // PredictImage
+        function onChangePredictImage() {
+            let prom = new Promise(function(resolve, reject) {
+                let file = document.getElementById("uploadImage").files[0];
+                previewImage(file, image);
+                consl.innerText = "";
+            });
+            prom.then(predictImage());
+            console.log(prom);
+        }
+
+        //Preview for training data
+        function onChangeDisplayImage() {
+            let prom = new Promise(function(resolve, reject) {
+                let files = document.getElementById("uploadTrainImage").files;
+                imageFiles(files, imgUploadPreview);
+            });
+        }
+    </script>
+</body>
+
+</html>
