@@ -19,12 +19,10 @@
 <body>
     <h1>Butterfly Classifier</h1>
     <ul>
-        <li><button id="btnPredictVideo">Predict Video</button> Video: <span id="videoResult">...</span> with a confidence of <span id="videoConfidence">...</span></li>
         <li><button id="btnPredictImage">Predict Image</button>Image: <span id="imageResult">...</span> with a confidence of <span id="imageConfidence">...</span></li>
     </ul>
     <h2>Preview</h2>
     <div>
-        <div id="videoContainer"></div>
         <label for="imageTest">Test file</label><input id="imageTest" type="file" name="imageTest" onchange="onChangePreviewTestImage();" /> <button id="clear-imagetest-preview">Clear image test preview</button><br/>
         <img id="imageTestPreview" />
     </div>
@@ -33,24 +31,23 @@
 
     <h2>Train Data</h2>
     <ul>
-        <li>Troides helena<button id="addTroideshelena">Video</button> | <button id="addTroideshelenaBatch">Image Batch</button> | <span id="exampleTroideshelena">0</span> examples | Confidence: <span id="confidenceTroideshelena">0</span></li>
-        <li>Pachliopta aristolochiae<button id="addPachlioptaaristolochiae">Video</button> | <button id="addPachlioptaaristolochiaeBatch">Image Batch</button> | <span id="examplePachlioptaaristolochiae">0</span> examples | Confidence: <span id="confidencePachlioptaaristolochiae">0</span></li>
-        <li>Atrophaneura coon<button id="addAtrophaneuracoon">Video</button> | <button id="addAtrophaneuracoonBatch">Image Batch</button> | <span id="exampleAtrophaneuracoon">0</span> examples | Confidence: <span id="confidenceAtrophaneuracoon">0</span></li>
-        <li>Pathysa antiphates<button id="addPathysaantiphates">Video</button> | <button id="addPathysaantiphatesBatch">Image Batch</button> | <span id="examplePathysaantiphates">0</span> examples | Confidence: <span id="confidencePathysaantiphates">0</span></li>
+        <li>Troides helena | <button id="addTroideshelenaBatch">Image Batch</button> | <span id="exampleTroideshelena">0</span> examples | Confidence: <span id="confidenceTroideshelena">0</span></li>
+        <li>Graphium agamemnon | <button id="addGraphiumagamemnonBatch">Image Batch</button> | <span id="exampleGraphiumagamemnon">0</span> examples | Confidence: <span id="confidenceGraphiumagamemnon">0</span></li>
+        <li>Papilio peranthus | <button id="addPapilioperanthusBatch">Image Batch</button> | <span id="examplePapilioperanthus">0</span> examples | Confidence: <span id="confidencePapilioperanthus">0</span></li>
     </ul>
     <h2>Training Data Preview</h2>
     <div id="imageTrainPreview"></div>
     <p>
         <label for="imageTrain">Train file(s)</label><input id="imageTrain" type="file" name="imageTrain" multiple onchange="onChangePreviewTrainImage();" /> <button id="clear-imagetrain-preview">Clear image train preview</button></p>
 
-    <div><button id="load">Load Dataset</button> | If this dataset doesn't work well for you, you could train your own classifier, and use the 'Save Dataset' button below to create your own coffeeKNNDataset.json file, and replace the coffeeKNNDataset.json
+    <div><button id="load">Load Dataset</button> | If this dataset doesn't work well for you, you could train your own classifier, and use the 'Save Dataset' button below to create your own ButterflyKNNDataset.json file, and replace the ButterflyKNNDataset.json
         in this folder.'</div>
     <div><button id="save">Save Dataset</button></div>
     <br />
 
     <p><button id="clearAll">Clear all classes</button></p>
 
-    <script src="./js/sketch.js"></script>
+    <script src="./js/sketch-image.js"></script>
 </body>
 
 </html>
