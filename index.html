@@ -19,13 +19,17 @@
 <body>
     <h1>Butterfly Classifier</h1>
     <ul>
-        <li><button id="btnPredictVideo">Predict Video</button> Video: <span id="videoResult">...</span> with a confidence of <span id="videoConfidence">...</span></li>
-        <li><button id="btnPredictImage">Predict Image</button>Image: <span id="imageResult">...</span> with a confidence of <span id="imageConfidence">...</span></li>
+        <li><button id="btnPredictVideo">Predict Video</button> Video: <span id="videoResult">...</span> with a
+            confidence of <span id="videoConfidence">...</span></li>
+        <li><button id="btnPredictImage">Predict Image</button>Image: <span id="imageResult">...</span> with a
+            confidence of <span id="imageConfidence">...</span></li>
     </ul>
     <h2>Preview</h2>
     <div>
         <div id="videoContainer"></div>
-        <label for="imageTest">Test file</label><input id="imageTest" type="file" name="imageTest" onchange="onChangePreviewTestImage();" /> <button id="clear-imagetest-preview">Clear image test preview</button><br/>
+        <label for="imageTest">Test file</label><input id="imageTest" type="file" name="imageTest"
+            onchange="onChangePreviewTestImage();" /> <button id="clear-imagetest-preview">Clear image test
+            preview</button><br />
         <img id="imageTestPreview" />
     </div>
 
@@ -33,18 +37,65 @@
 
     <h2>Train Data</h2>
     <ul>
-        <li>Troides helena<button id="addTroideshelena">Video</button> | <button id="addTroideshelenaBatch">Image Batch</button> | <span id="exampleTroideshelena">0</span> examples | Confidence: <span id="confidenceTroideshelena">0</span></li>
-        <li>Pachliopta aristolochiae<button id="addPachlioptaaristolochiae">Video</button> | <button id="addPachlioptaaristolochiaeBatch">Image Batch</button> | <span id="examplePachlioptaaristolochiae">0</span> examples | Confidence: <span id="confidencePachlioptaaristolochiae">0</span></li>
-        <li>Atrophaneura coon<button id="addAtrophaneuracoon">Video</button> | <button id="addAtrophaneuracoonBatch">Image Batch</button> | <span id="exampleAtrophaneuracoon">0</span> examples | Confidence: <span id="confidenceAtrophaneuracoon">0</span></li>
-        <li>Pathysa antiphates<button id="addPathysaantiphates">Video</button> | <button id="addPathysaantiphatesBatch">Image Batch</button> | <span id="examplePathysaantiphates">0</span> examples | Confidence: <span id="confidencePathysaantiphates">0</span></li>
+        <li>Troides helena<button id="addTroideshelena">Video</button> | <button id="addTroideshelenaBatch">Image
+                Batch</button> | <span id="exampleTroideshelena">0</span> examples | Confidence: <span
+                id="confidenceTroideshelena">0</span></li>
+        <li>Pachliopta aristolochiae<button id="addPachlioptaaristolochiae">Video</button> | <button
+                id="addPachlioptaaristolochiaeBatch">Image Batch</button> | <span
+                id="examplePachlioptaaristolochiae">0</span> examples | Confidence: <span
+                id="confidencePachlioptaaristolochiae">0</span></li>
+        <li>Atrophaneura coon<button id="addAtrophaneuracoon">Video</button> | <button
+                id="addAtrophaneuracoonBatch">Image Batch</button> | <span id="exampleAtrophaneuracoon">0</span>
+            examples | Confidence: <span id="confidenceAtrophaneuracoon">0</span></li>
+        <li>Pathysa antiphates<button id="addPathysaantiphates">Video</button> | <button
+                id="addPathysaantiphatesBatch">Image Batch</button> | <span id="examplePathysaantiphates">0</span>
+            examples | Confidence: <span id="confidencePathysaantiphates">0</span></li>
+        <li>Papilio memnon<button id="addPapiliomemnon">Video</button> | <button id="addPapiliomemnonBatch">Image
+                Batch</button> | <span id="examplePapiliomemnon">0</span> examples | Confidence: <span
+                id="confidencePapiliomemnon">0</span></li>
+        <li>Papilio nephelus<button id="addPapilionephelus">Video</button> | <button id="addPapilionephelusBatch">Image
+                Batch</button> | <span id="examplePapilionephelus">0</span> examples | Confidence: <span
+                id="confidencePapilionephelus">0</span></li>
+        <li>Papilio demoleus<button id="addPapiliodemoleus">Video</button> | <button id="addPapiliodemoleusBatch">Image
+                Batch</button> | <span id="examplePapiliodemoleus">0</span> examples | Confidence: <span
+                id="confidencePapiliodemoleus">0</span></li>
+        <li>Papilio demolion<button id="addPapiliodemolion">Video</button> | <button id="addPapiliodemolionBatch">Image
+                Batch</button> | <span id="examplePapiliodemolion">0</span> examples | Confidence: <span
+                id="confidencePapiliodemolion">0</span></li>
+        <li>Papilio peranthus<button id="addPapilioperanthus">Video</button> | <button
+                id="addPapilioperanthusBatch">Image Batch</button> | <span id="examplePapilioperanthus">0</span>
+            examples | Confidence: <span id="confidencePapilioperanthus">0</span></li>
+        <li>Papilio polytes<button id="addPapiliopolytes">Video</button> | <button id="addPapiliopolyteshBatch">Image
+                Batch</button> | <span id="examplePapiliopolytes">0</span> examples | Confidence: <span
+                id="confidencePapiliopolytes">0</span></li>
+        <li>Papilio iswara<button id="addPapilioiswara">Video</button> | <button id="addPapilioiswaraBatch">Image
+                Batch</button> | <span id="examplePapilioiswara">0</span> examples | Confidence: <span
+                id="confidencePapilioiswara">0</span></li>
+        <li>Papilio helenus<button id="addPapiliohelenus">Video</button> | <button id="addPapiliohelenusBatch">Image
+                Batch</button> | <span id="examplePapiliohelenus">0</span> examples | Confidence: <span
+                id="confidencePapiliohelenus">0</span></li>
+        <li>Graphium agamemnon<button id="addGraphiumagamemnon">Video</button> | <button
+                id="addGraphiumagamemnonBatch">Image Batch</button> | <span id="exampleGraphiumagamemnon">0</span>
+            examples | Confidence: <span id="confidenceGraphiumagamemnon">0</span></li>
+        <li>Graphium doson<button id="addGraphiumdoson">Video</button> | <button id="addGraphiumdosonBatch">Image
+                Batch</button> | <span id="exampleGraphiumdoson">0</span> examples | Confidence: <span
+                id="confidenceGraphiumdoson">0</span></li>
+        <li>Graphium sarpedon<button id="addGraphiumsarpedon">Video</button> | <button
+                id="addGraphiumsarpedonBatch">Image Batch</button> | <span id="exampleGraphiumsarpedon">0</span>
+            examples | Confidence: <span id="confidenceGraphiumsarpedon">0</span></li>
+        <li>Meandrusa payeni<button id="addMeandrusapayeni">Video</button> | <button id="addMeandrusapayeniBatch">Image
+                Batch</button> | <span id="exampleMeandrusapayeni">0</span> examples | Confidence: <span
+                id="confidenceMeandrusapayeni">0</span></li>
     </ul>
     <h2>Training Data Preview</h2>
     <div id="imageTrainPreview"></div>
     <p>
-        <label for="imageTrain">Train file(s)</label><input id="imageTrain" type="file" name="imageTrain" multiple onchange="onChangePreviewTrainImage();" /> <button id="clear-imagetrain-preview">Clear image train preview</button></p>
+        <label for="imageTrain">Train file(s)</label><input id="imageTrain" type="file" name="imageTrain" multiple
+            onchange="onChangePreviewTrainImage();" /> <button id="clear-imagetrain-preview">Clear image train
+            preview</button>
+    </p>
 
-    <div><button id="load">Load Dataset</button> | If this dataset doesn't work well for you, you could train your own classifier, and use the 'Save Dataset' button below to create your own coffeeKNNDataset.json file, and replace the coffeeKNNDataset.json
-        in this folder.'</div>
+    <div><button id="load">Load Dataset</button> | If this dataset doesn't work well for you, you could train your own classifier, and use the 'Save Dataset' button below to create your own ButterflyKNNDataset.json file, and replace the ButterflyKNNDataset.json in this folder.'</div>
     <div><button id="save">Save Dataset</button></div>
     <br />
 

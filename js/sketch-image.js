@@ -132,14 +132,77 @@ function createButtons() {
         addExamples(imageTrainPreview, 'Troides helena');
     });
 
-    buttonBBatch = select('#addGraphiumagamemnonBatch');
+    buttonBBatch = select('#addPachlioptaaristolochiaeBatch');
     buttonBBatch.mousePressed(function() {
+        addExamples(imageTrainPreview, 'Pachliopta aristolochiae');
+    });
+
+    buttonCBatch = select('#addAtrophaneuracoonBatch');
+    buttonCBatch.mousePressed(function() {
+        addExamples(imageTrainPreview, 'Atrophaneura coon');
+    });
+
+    buttonDBatch = select('#addPathysaantiphatesBatch');
+    buttonDBatch.mousePressed(function() {
+        addExamples(imageTrainPreview, 'Pathysa antiphates');
+    });
+
+    buttonEBatch = select('#addPapiliomemnonBatch');
+    buttonEBatch.mousePressed(function() {
+        addExamples(imageTrainPreview, 'Papilio memnon');
+    });
+
+    buttonFBatch = select('#addPapilionephelusBatch');
+    buttonFBatch.mousePressed(function() {
+        addExamples(imageTrainPreview, 'Papilio nephelus');
+    });
+
+    buttonGBatch = select('#addPapiliodemoleusBatch');
+    buttonGBatch.mousePressed(function() {
+        addExamples(imageTrainPreview, 'Papilio demoleus');
+    });
+
+    buttonHBatch = select('#addPapiliodemolionBatch');
+    buttonHBatch.mousePressed(function() {
+        addExamples(imageTrainPreview, 'Papilio demolion');
+    });
+    buttonIBatch = select('#addPapilioperanthusBatch');
+    buttonIBatch.mousePressed(function() {
+        addExamples(imageTrainPreview, 'Papilio peranthus');
+    });
+
+    buttonJBatch = select('#addPapiliopolyteshBatch');
+    buttonJBatch.mousePressed(function() {
+        addExamples(imageTrainPreview, 'Papilio polytes');
+    });
+
+    buttonKBatch = select('#addPapilioiswaraBatch');
+    buttonKBatch.mousePressed(function() {
+        addExamples(imageTrainPreview, 'Papilioiswara');
+    });
+
+    buttonLBatch = select('#addPapiliohelenusBatch');
+    buttonLBatch.mousePressed(function() {
+        addExamples(imageTrainPreview, 'Papilio helenus');
+    });
+    buttonMBatch = select('#addGraphiumagamemnonBatch');
+    buttonMBatch.mousePressed(function() {
         addExamples(imageTrainPreview, 'Graphium agamemnon');
     });
 
-    buttonCBatch = select('#addPapilioperanthusBatch');
-    buttonCBatch.mousePressed(function() {
-        addExamples(imageTrainPreview, 'Papilio peranthus');
+    buttonNBatch = select('#addGraphiumdosonBatch');
+    buttonNBatch.mousePressed(function() {
+        addExamples(imageTrainPreview, 'Graphium doson');
+    });
+
+    buttonOBatch = select('#addGraphiumsarpedonBatch');
+    buttonOBatch.mousePressed(function() {
+        addExamples(imageTrainPreview, 'Graphium sarpedon');
+    });
+
+    buttonPBatch = select('#addMeandrusapayeniBatch');
+    buttonPBatch.mousePressed(function() {
+        addExamples(imageTrainPreview, 'Meandrusa payeni');
     });
 
     // Predict button
@@ -176,8 +239,21 @@ function gotResultsImage(err, result) {
         }
 
         select('#confidenceTroideshelena').html(`${confidences['Troides helena'] ? confidences['Troides helena'] * 100 : 0} %`);
-        select('#confidenceGraphiumagamemnon').html(`${confidences['Graphium agamemnon'] ? confidences['Graphium agamemnon'] * 100 : 0} %`);
+        select('#confidencePachlioptaaristolochiae').html(`${confidences['Pachliopta aristolochiae'] ? confidences['Pachliopta aristolochiae'] * 100 : 0} %`);
+        select('#confidenceAtrophaneuracoon').html(`${confidences['Atrophaneura coon'] ? confidences['Atrophaneuracoon'] * 100 : 0} %`);
+        select('#confidencePathysaantiphates').html(`${confidences['Pathysa antiphates'] ? confidences['Pathysaantiphates'] * 100 : 0} %`);
+        select('#confidencePapiliomemnon').html(`${confidences['Papilio memnon'] ? confidences['Papilio memnon'] * 100 : 0} %`);
+        select('#confidencePapilionephelus').html(`${confidences['Papilio nephelus'] ? confidences['Papilio nephelus'] * 100 : 0} %`);
+        select('#confidencePapiliodemoleus').html(`${confidences['Papilio demoleus'] ? confidences['Papilio demoleus'] * 100 : 0} %`);
+        select('#confidencePapiliodemolion').html(`${confidences['Papilio demolion'] ? confidences['Papilio demolion'] * 100 : 0} %`);
         select('#confidencePapilioperanthus').html(`${confidences['Papilio peranthus'] ? confidences['Papilio peranthus'] * 100 : 0} %`);
+        select('#confidencePapiliopolytes').html(`${confidences['Papilio polytes'] ? confidences['Papilio polytes'] * 100 : 0} %`);
+        select('#confidencePapilioiswara').html(`${confidences['Papilio iswara'] ? confidences['Papilio iswara'] * 100 : 0} %`);
+        select('#confidencePapiliohelenus').html(`${confidences['Papilio helenus'] ? confidences['Papilio helenus'] * 100 : 0} %`);
+        select('#confidenceGraphiumagamemnon').html(`${confidences['Graphium agamemnon'] ? confidences['Graphium agamemnon'] * 100 : 0} %`);
+        select('#confidenceGraphiumdoson').html(`${confidences['Graphium doson'] ? confidences['Graphium doson'] * 100 : 0} %`);
+        select('#confidenceGraphiumsarpedon').html(`${confidences['Graphium sarpedon'] ? confidences['Graphium sarpedon'] * 100 : 0} %`);
+        select('#confidenceMeandrusapayeni').html(`${confidences['Meandrusa payeni'] ? confidences['Meandrusa payeni'] * 100 : 0} %`);
     }
 }
 
@@ -185,9 +261,22 @@ function gotResultsImage(err, result) {
 function updateCounts() {
     const counts = knnClassifier.getCountByLabel();
 
-    select('#exampleTroideshelena').html(counts['Troides helena'] || 0);
-    select('#exampleGraphiumagamemnon').html(counts['Graphium agamemnon'] || 0);
-    select('#examplePapilioperanthus').html(counts['Papilio peranthus'] || 0);
+    select('#exampleTroideshelena').html(counts['Troideshelena'] || 0);
+    select('#examplePachlioptaaristolochiae').html(counts['Pachliopta aristolochiae'] || 0);
+    select('#exampleAtrophaneuracoon').html(counts['Atrophaneura coon'] || 0);
+    select('#examplePathysaantiphates').html(counts['Pathysa antiphates'] || 0);
+    select('#examplePapiliomemnon').html(counts['Papilio memnon'] || 0);
+    select('#examplePapilionephelus').html(counts['Papilio nephelus'] || 0);
+    select('#examplePapiliodemoleus').html(counts['Papilio demoleus'] || 0); 
+    select('#examplePapiliodemolion').html(counts['Papilio demolion'] || 0);
+    select('#examplePapilioperanthus').html(counts['Papilio peranthus'] || 0); 
+    select('#examplePapiliopolytes').html(counts['Papilio polytes'] || 0); 
+    select('#examplePapilioiswara').html(counts['Papilio iswara'] || 0); 
+    select('#examplePapiliohelenus').html(counts['Papilio helenus'] || 0);
+    select('#exampleGraphiumagamemnon').html(counts['Graphium agamemnon'] || 0); 
+    select('#exampleGraphiumdoson').html(counts['Graphium doson'] || 0); 
+    select('#exampleGraphiumsarpedon').html(counts['Graphium sarpedon'] || 0); 
+    select('#exampleMeandrusapayeni').html(counts['Meandrusa payeni'] || 0);  
 }
 
 // Clear the examples in one label

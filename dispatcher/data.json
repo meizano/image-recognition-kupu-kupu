@@ -1,0 +1,335 @@
+{
+    "kupukupu": [{
+            "id": 1,
+            "nama_lokal": "Kupu Raja Helena",
+            "nama_latin": "Troides helena",
+            "deskripsi": "Troides helena memiliki sayap dengan berwarna hitam dan sayap belakang berwarna kuning dengan berwarna hitam. Kupu-kupu ini memiliki rentang paling besar di Gunung Betung. Kupu-kupu ini sering ditemui terbang melayang melewati pepohonan di daerah hutan. <i>Troides helena</i> merupakan kupu-kupu langka dan terancam punah karena tumbuhan inangnya, <i>Aristolochia tagala</i>, merupakan tumbuhan yang cukup langka, kemudian ulatnya sangat rakus dan dapat memakan tumbuhan inang hingga bagian batangnya yang dapat menyebabkan tumbuhan mati.",
+            "kecepatan_terbang": "Sedang",
+            "ukuran_sayap": "13-17 cm",
+            "gambar": [
+                "./image/kupu-kupu/1.Troides helena jantan/gambar1.jpg",
+                "./image/kupu-kupu/1.Troides helena jantan/gambar2.jpg",
+                "./image/kupu-kupu/1.Troides helena jantan/gambar3.jpg"
+            ],
+            "warna": [
+                "kuning",
+                "hitam"
+            ],
+            "pakan_ulat": [
+                "Aristolochia tagala"
+            ]
+        },
+        {
+            "id": 2,
+            "nama_lokal": "Kupu Pantat Merah",
+            "nama_latin": "Pachliopta aristolochiae",
+            "deskripsi": "Warna sayap dengan hitam dengan apeks yang keabu-abuan dan terdapat titik merah mengelilingi bagian margin luar sayap bagian belakang. Kupu-kupu ini juga memilih tanaman inang pakan larva yang sama dengan <i>Troides helena</i>, yaitu </i>Aristolochia tagala</i> yang merupakan tumbuhan langka, kemudian ulatnya sangat rakus dan dapat memakan tumbuhan inang hingga bagian batangnya yang dapat menyebabkan tumbuhan mati.",
+            "kecepatan_terbang": "Lambat",
+            "ukuran_sayap": "9-10 cm",
+            "gambar": [
+                "./image/kupu-kupu/2.Pachliopta aristolochiae/gambar1.jpg",
+                "./image/kupu-kupu/2.Pachliopta aristolochiae/gambar2.jpg",
+                "./image/kupu-kupu/2.Pachliopta aristolochiae/gambar3.jpg"
+            ],
+            "warna": [
+                "putih",
+                "merah",
+                "hitam"
+            ],
+            "pakan_ulat": [
+                "Aristolochia tagala"
+            ]
+        },
+        {
+            "id": 3,
+            "nama_lokal": "Kupu Perut Kuning",
+            "nama_latin": "Atrophaneura coon",
+            "deskripsi": "Kupu-kupu ini senang sekali terbang rendah, sehingga mudah sekali untuk dulihat. Kupu-kupu ini sangat mudah dikenali dengan sayap yang cukup lebar dengan warna perut kuning terang dengan bintik-bintik hitam.",
+            "kecepatan_terbang": "Lambat",
+            "ukuran_sayap": "12-15 cm",
+            "gambar": [
+                "./image/kupu-kupu/3.Atrophaneura coon/gambar1.jpg",
+                "./image/kupu-kupu/3.Atrophaneura coon/gambar2.jpg",
+                "./image/kupu-kupu/3.Atrophaneura coon/gambar3.jpg"
+            ],
+            "warna": [
+                "putih",
+                "kuning",
+                "hitam"
+            ],
+            "pakan_ulat": [
+                "Apama thomentosa"
+            ]
+        },
+        {
+            "id": 4,
+            "nama_lokal": "Kupu Ekor Pedang",
+            "nama_latin": "Pathysa antiphates",
+            "deskripsi": "Kupu-kupu yang terbang sangat cepat ini sering kali ketika terbang terlihat seperti kupu <i>Appias lybithea</i> yang lebih umum. Kupu ini terbang cukup tinggi di atas kanopi hutan. Walaupun begitu, jantan dari kupu ini sering terlihat sedang menghisap mineral di kubangan lumpur dasar hutan.",
+            "kecepatan_terbang": "Cepat sekali",
+            "ukuran_sayap": "11-13 cm",
+            "gambar": [
+                "./image/kupu-kupu/4.Pathysa antiphates/gambar1.jpg",
+                "./image/kupu-kupu/4.Pathysa antiphates/gambar2.jpg",
+                "./image/kupu-kupu/4.Pathysa antiphates/gambar3.jpg"
+            ],
+            "warna": [
+                "kuning",
+                "hijau",
+                "jingga",
+                "putih",
+                "hitam"
+            ],
+            "pakan_ulat": [
+                "Punti-punti"
+            ]
+        },
+        {
+            "id": 5,
+            "nama_lokal": "Kupu Raja Limau",
+            "nama_latin": "Papilio memnon",
+            "deskripsi": "Kupu-kupu dan cukup banyak tterdapat di alam ini, sering terlihat terbang rendah untuk mencari bunga dan pasangan. Pakan larva utama dari kupu ini adalah jeruk-jerukan, hal ini pulalah yang menyebabkan banyaknya kupu ini dii alam karena pakan yang stabil di alam.",
+            "kecepatan_terbang": "Sedang",
+            "ukuran_sayap": "15-17 cm",
+            "gambar": [
+                "./image/kupu-kupu/5.Papilio memmon/gambar1.jpg",
+                "./image/kupu-kupu/5.Papilio memmon/gambar2.jpg",
+                "./image/kupu-kupu/5.Papilio memmon/gambar3.jpg"
+            ],
+            "warna": [
+                "biru",
+                "hijau",
+                "hitam"
+            ],
+            "pakan_ulat": [
+                "Citrus sp./daun jeruk"
+            ]
+        },
+        {
+            "id": 6,
+            "nama_lokal": "Kupu Jojo",
+            "nama_latin": "Papilio-nephelus",
+            "deskripsi": "Kupu-kupu yang terbang cepat ini adalah kupu-kupu yang gampang sekali dikenali ketika terbang.Pola putih pada sayap belakangnya begitu besar sehingga walaupun terbang cepat kupu ini tetap dapat dibedakan dengan mudah dari Papilionid yang lain.",
+            "kecepatan_terbang": "Cepat sekali",
+            "ukuran_sayap": "12-14 cm",
+            "gambar": [
+                "./image/kupu-kupu/6.Papilio nephelus/gambar1.jpg",
+                "./image/kupu-kupu/6.Papilio nephelus/gambar2.jpg",
+                "./image/kupu-kupu/6.Papilio nephelus/gambar3.jpg"
+            ],
+            "warna": [
+                "hitam",
+                "putih"
+            ],
+            "pakan_ulat": [
+                "clausena excavata"
+            ]
+        },
+        {
+            "id": 7,
+            "nama_lokal": "Kupu Limau Kuning",
+            "nama_latin": "Papilio demoleus",
+            "deskripsi": "Kupu-kupu pemakan jeruk ini memiliki ulat yang sangat mirip <i>P. memnon</i> dan <i>P. nephelus</i>. Kupu-kupu ini berwarn kuning dengan bintik biru yang sangat mudah dikenali. Kupu-kupu ini cukup sering terlihat di wilayah perkotaan, karena tanaman jeruk-jerukan cukup mudah ditemui di daerah perkotaan di Lampung. Tanaman jeruk-jerukan cukup sering dipakai sebagai tanaman hias di daerah perkotaan.",
+            "kecepatan_terbang": "Sedang",
+            "ukuran_sayap": "10-11 cm",
+            "gambar": [
+                "./image/kupu-kupu/7.Papilio demoleus/gambar1.jpg",
+                "./image/kupu-kupu/7.Papilio demoleus/gambar2.jpg",
+                "./image/kupu-kupu/7.Papilio demoleus/gambar3.jpg"
+            ],
+            "warna": [
+                "kuning",
+                "hitam"
+            ],
+            "pakan_ulat": [
+                "Citrus sp./daun jeruk"
+            ]
+        },
+        {
+            "id": 8,
+            "nama_lokal": "Kupu Pauh",
+            "nama_latin": "Papilio demolion",
+            "deskripsi": "Kupu-kupu ini terbang sangat cepat sekali. Ketika terbang seringkali terlihat seperti kupu jantan dari P. polytes namun memiliki pola terbang yang sangat berbeda. Salah satu hal yang menarik dari kupu ini adalah cara peletakan telur yang ditumpuk menyerupai tongkat. Ulat dri kupu-kupu ini cenderung berkumpul bila istirahat atau tidak makan. Perilaku ini merupakan salah satu cara bertahan dari predator mereka.",
+            "kecepatan_terbang": "Cepat sekali",
+            "ukuran_sayap": "12-13 cm",
+            "gambar": [
+                "./image/kupu-kupu/8.Papilio demolion/gambar1.jpg",
+                "./image/kupu-kupu/8.Papilio demolion/gambar2.jpg",
+                "./image/kupu-kupu/8.Papilio demolion/gambar3.jpg"
+            ],
+            "warna": [
+                "kuning",
+                "hitam"
+            ],
+            "pakan_ulat": [
+                "Pauh-Pauh"
+            ]
+        },
+        {
+            "id": 9,
+            "nama_lokal": "Kupu Hijau biru",
+            "nama_latin": "Papilio peranthus",
+            "deskripsi": "kupu-kupu biru cantik ini terdapat dengan populasi yang sangat banyak di Taman Kupu-kupu Gita Persada. Terbang cukup cepat kupu ini mudah sekali dengan sayap safir hijau birunya. Namun apabila sedang istirahat atau tidur sayapnya akan menutup dan hanya terlihat sayap bawahnya yang berwarna gelap. Sehingga, kupu ini akan cukup sulit dicari ketika posisi sayapnya dalam keadaan menutup.",
+            "kecepatan_terbang": "Cepat",
+            "ukuran_sayap": "10-11 cm",
+            "gambar": [
+                "./image/kupu-kupu/9.Papilio peranthus/gambar1.jpg",
+                "./image/kupu-kupu/9.Papilio peranthus/gambar2.jpg",
+                "./image/kupu-kupu/9.Papilio peranthus/gambar3.jpg"
+            ],
+            "warna": [
+                "biru",
+                "hijau",
+                "hitam"
+            ],
+            "pakan_ulat": [
+                "Clausena excavata"
+            ]
+        },
+        {
+            "id": 10,
+            "nama_lokal": "Kupu Limau kecil",
+            "nama_latin": "Papilio polythes",
+            "deskripsi": "Kupu-kupu ini memiliki pola sayap yang berbeda antara jantan dan betina . Kupu <i>P.polytes</i> betina  adalah mimik dari kupu <i>Pachliopta aristolochiae</i> yng lebih beracun.Ulatnya sangat rakus dan dapat memakan tumbuhan inang hingga bagian batangnya yang dapat menyebabkan tumbuhan mati.",
+            "kecepatan_terbang": "Sedang",
+            "ukuran_sayap": "9-10 cm",
+            "gambar": [
+                "./image/kupu-kupu/10.Papilio polytes/gambar1.jpg",
+                "./image/kupu-kupu/10.Papilio polytes/gambar2.jpg",
+                "./image/kupu-kupu/10.Papilio polytes/gambar3.jpg"
+            ],
+            "warna": [
+                "hitam",
+                "mputih"
+            ],
+            "pakan_ulat": [
+                "Citrus sp./daun jeruk"
+            ]
+        },
+        {
+            "id": 11,
+            "nama_lokal": "Kupu iswara",
+            "nama_latin": "Papilio iswara iswara",
+            "deskripsi": "Kupu-kupu ini terbang cepat sekali sehingga ketika terrbang kadang kala sangat susah dibedakan antara Papilio iswara, Papilio helenus dan Papilio nephelus. Kupu-kupu ini menyukai nektar dari bunga lantana dan bunga sepatu(hibiscus).",
+            "kecepatan_terbang": "Cepat",
+            "ukuran_sayap": "12-14 cm",
+            "gambar": [
+                "./image/kupu-kupu/11.Papilio iswara/gambar1.jpg",
+                "./image/kupu-kupu/11.Papilio iswara/gambar2.jpg",
+                "./image/kupu-kupu/11.Papilio iswara/gambar3.jpg"
+            ],
+            "warna": [
+                "putih",
+                "merah",
+                "hitam"
+            ],
+            "pakan_ulat": [
+                "Clausena excavata"
+            ]
+        },
+        {
+            "id": 12,
+            "nama_lokal": "Kupu helen merah",
+            "nama_latin": "Papilio helenus",
+            "deskripsi": "Kupu-kupu ini terbang cepat sekali sehingga ketika terrbang kadang kala sangat susah dibedakan antara <i>Papilio iswara</i>, <i>Papilio helenus</i>, <i>Papilio nephelus</i> serta <i>Papilio polytes</i>.",
+            "kecepatan_terbang": "Cepat",
+            "ukuran_sayap": "11-12 cm",
+            "gambar": [
+                "./image/kupu-kupu/12.Papilio helenus/gambar1.jpg",
+                "./image/kupu-kupu/12.Papilio helenus/gambar2.jpg",
+                "./image/kupu-kupu/12.Papilio helenus/gambar3.jpg"
+            ],
+            "warna": [
+                "jingga",
+                "putih",
+                "hitam"
+            ],
+            "pakan_ulat": [
+                "Clausena excavata"
+            ]
+        },
+        {
+            "id": 13,
+            "nama_lokal": "Kupu bintik Hijau",
+            "nama_latin": "Graphium agamemnon",
+            "deskripsi": "Si penerbang cepat ini biasanya terlihat sebagai sekelebat warna hijau. Terbang dengan ketinggian sedang menyebabkan kupu-kupu ini dapat dengan mudah ditemui. ketersediaan pakan larva yang sangat beragam juga menyebabkan kupu-kupu ini gampang ditemui di daerah perkotaan (sebagian tanaman pakan kupu-kupu ini adalah tanaman hias dan buah).",
+            "kecepatan_terbang": "Cepat",
+            "ukuran_sayap": "9-10 cm",
+            "gambar": [
+                "./image/kupu-kupu/13.Graphium agamemnon/gambar1.jpg",
+                "./image/kupu-kupu/13.Graphium agamemnon/gambar2.jpg",
+                "./image/kupu-kupu/13.Graphium agamemnon/gambar3.jpg"
+            ],
+            "warna": [
+                "kuning",
+                "hitam"
+            ],
+            "pakan_ulat": [
+                "Sirsak",
+                "Glondokan",
+                "Cempaka"
+            ]
+        },
+        {
+            "id": 14,
+            "nama_lokal": "Kupu sirsak",
+            "nama_latin": "Graphium doson",
+            "deskripsi": "Kupu ini ketika terbang cukup susah dibedakan antara <i>Graphium sarpedon</i> dengan <i>Graphium doson</i>. Terbang dengan ketinggian sedang kupu-kupu ini dapat dengan mudah ditemui. ketersediaan pakan larva yang sangat beragam juga menyebabkan kupu-kupu ini gampang ditemui di daerah perkotaan( sebagian tanaman pakan kupu-kupu ini adalah tanaman hias dan buah).",
+            "kecepatan_terbang": "Sedang",
+            "ukuran_sayap": "8-9 cm",
+            "gambar": [
+                "./image/kupu-kupu/14.Grapnium doson/gambar1.jpg",
+                "./image/kupu-kupu/14.Grapnium doson/gambar2.jpg",
+                "./image/kupu-kupu/14.Grapnium doson/gambar3.jpg"
+            ],
+            "warna": [
+                "biru",
+                "hitam"
+            ],
+            "pakan_ulat": [
+                "Sirsak",
+                "Glondokan",
+                "Cempaka"
+            ]
+        },
+        {
+            "id": 15,
+            "nama_lokal": "Kupu Segitiga",
+            "nama_latin": "Graphium sarpedon",
+            "deskripsi": "Kupu ini ketika terbang cukup susah dibedakan antara <i>Graphium sarpedon </i>dengan <i>Graphium doson</i>. Terbang dengan ketinggian sedang menyebabkan kupu-kupu ini dapat dengan mudah ditemui. ketersediaan pakan larva yang sangat beragam juga menyebabkan kupu-kupu ini gampang ditemui di daerah perkotaan (sebagian tanaman pakan kupu-kupu ini adalah tanaman hias dan buah).",
+            "kecepatan_terbang": "Cepat",
+            "ukuran_sayap": "9-10 cm",
+            "gambar": [
+                "./image/kupu-kupu/15.Graphium sarpedon/gambar1.jpg",
+                "./image/kupu-kupu/15.Graphium sarpedon/gambar2.jpg",
+                "./image/kupu-kupu/15.Graphium sarpedon/gambar3.jpg"
+            ],
+            "warna": [
+                "biru",
+                "merah",
+                "hitam"
+            ],
+            "pakan_ulat": [
+                "Sirsak",
+                "Cempaka"
+            ]
+        },
+        {
+            "id": 16,
+            "nama_lokal": "Kupu Sayap Bulan",
+            "nama_latin": "Meandrusa payeni",
+            "deskripsi": "Kupu-kupu ini terbang dengan sangat cepat. Terbang cukup tinggi kadang di kanopi hutan. Bentuk sayap depannya yang seperti bulan sabit lah yang menyebabkan kupu-kupu ini dipanggil kupu sayap bulan.",
+            "kecepatan_terbang": "Cepat Sekali",
+            "ukuran_sayap": "12-14 cm",
+            "gambar": [
+                "./image/kupu-kupu/16.Meandrusa payeni/gambar1.jpg",
+                "./image/kupu-kupu/16.Meandrusa payeni/gambar2.jpg",
+                "./image/kupu-kupu/16.Meandrusa payeni/gambar3.jpg"
+            ],
+            "warna": [
+                "jingga"
+            ],
+            "pakan_ulat": []
+        }
+    ]
+}

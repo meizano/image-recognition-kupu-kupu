@@ -15,3 +15,13 @@ video {
         /* The width is 100%, when the viewport is 800px or smaller */
     }
 }
+
+.gambarkupu {
+    display: inline-block;
+    list-style: none;
+}
+
+.gambarkupu img {
+    width: 30vw;
+    height: auto;
+}
